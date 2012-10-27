@@ -7,8 +7,14 @@
 <% end %>
 
   <div style="float:left"><%= image_tag "josefa.jpg" %>                              <br>
-    <div style="text-align: center;"><button type="button" class="btn btn-success">Votala!</button></div></div>
+    <% if user_signed_in? %>
+    <div style="text-align: center;"><button type="button" class="btn btn-success">Votala!</button></div>
+     <% end %>
+        </div>
   <div style="float:right"><%= image_tag "labbe.jpeg" %><br>
+    <% if user_signed_in? %>
     <div style="text-align: center;"><button type="button" class="btn btn-success">Votalo!</button></div>
+    <% end %>
+
 </div>
 <div style="clear: both;"></div>
