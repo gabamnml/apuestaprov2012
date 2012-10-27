@@ -1,20 +1,22 @@
 <% if user_signed_in? %>
-    <h2>Comienza a votar!!</h2>
+  <h2>Solo puedes votar una vez</h2>
+  <p>Luego de votar podras ver como van las apuestas!</p>
 <% else %>
-    <h1>Bienvenido/a !</h1>
-    <p>Registrate con tu cuenta y apuesta por tu elegido.<br>
-      No temas por esto ya que es confidencial tu voto no lo asociamos con la cuenta registrada. </p>
+  <h1>Bienvenido/a !</h1>
+  <p>Quien va a ganar las municipales en Providencia? Apuesta por tu elegido!<br>
+    Registrate y vota, solo ocupamos tu registro para validar el voto.</p>
 <% end %>
-
-  <div style="float:left"><%= image_tag "josefa.jpg" %>                              <br>
-    <% if user_signed_in? %>
-    <div style="text-align: center;"><button type="button" class="btn btn-success">Votala!</button></div>
-     <% end %>
-        </div>
-  <div style="float:right"><%= image_tag "labbe.jpeg" %><br>
-    <% if user_signed_in? %>
-    <div style="text-align: center;"><button type="button" class="btn btn-success">Votalo!</button></div>
-    <% end %>
-
-</div>
-<div style="clear: both;"></div>
+  <div class="clearfix">
+    <div class="pull-left">
+      <p><%= image_tag "josefa.jpg", :class => 'img-polaroid' %></p>
+      <% if user_signed_in? %>
+      <p style="text-align: center;"><button type="button" class="btn btn-success">Votar</button></p>
+      <% end %>
+    </div>
+    <div class="pull-right">
+      <p><%= image_tag "labbe.jpeg", :class => 'img-polaroid' %></p>
+      <% if user_signed_in? %>
+      <p style="text-align: center;"><button type="button" class="btn btn-success">Votar</button></p>
+      <% end %>
+    </div>
+  </div>
