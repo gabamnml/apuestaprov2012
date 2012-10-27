@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+    <h2>Comienza a votar!!</h2>
+<% else %>
+    <h1>Bienvenido/a !</h1>
+    <p>Registrate con tu cuenta y apuesta por tu elegido.<br>
+      No temas por esto ya que es confidencial tu voto no lo asociamos con la cuenta registrada. </p>
+<% end %>
+
+  <div style="float:left"><%= image_tag "josefa.jpg" %>                              <br>
+    <div style="text-align: center;"><button type="button" class="btn btn-success">Votala!</button></div></div>
+  <div style="float:right"><%= image_tag "labbe.jpeg" %><br>
+    <div style="text-align: center;"><button type="button" class="btn btn-success">Votalo!</button></div>
+</div>
+<div style="clear: both;"></div>

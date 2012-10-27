@@ -12,7 +12,9 @@ end
 group :production do
   gem 'pg'
 end
+gem 'devise'
 
+gem 'devise_rpx_connectable', git: 'https://github.com/rfc83/devise_rpx_connectable.git'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

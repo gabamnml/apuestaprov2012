@@ -7,8 +7,48 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#"><small>Apuestas Providencia 2012</small></a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <% if user_signed_in? %>
+              <li><%= current_user.email  %></li>
+              <li>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              </li>
+          <% else %>
+              <li>
+                <%= link_to_rpx 'Sign in', user_session_url  %>
+              </li>
+          <% end %>
+        </ul><%= javascript_include_rpx(user_session_url) %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
+<div class="container">
 
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit" style='margin-top: 80px;'>
+    <%= yield %>
+  </div>
+
+
+  <hr>
+  <footer>
+    <p>&copy; The Best Company 2012</p>
+  </footer>
+
+</div>
 </body>
 </html>
