@@ -10,9 +10,13 @@
     <% if @candidatos["Josefa"] %>
     <div class="pull-left">
       <p><%= image_tag "josefa.jpg", :class => 'img-polaroid' %></p>
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <% if current_user.vote %>
+      <p style="text-align: center;"><%= @candidatos["Josefa"].votes %></p>
+      <% else %>
       <p style="text-align: center;"><a href="/welcome/vote/<%= @candidatos["Josefa"].id %>" class="btn btn-success">Votar</a></p>
       <% end %>
+    <% end %>
     </div>
     <% else %>
     <p>Candidato "Josefa" no encontrado.</p>
@@ -20,9 +24,13 @@
     <% if @candidatos["Labbe"] %>
     <div class="pull-right">
       <p><%= image_tag "labbe.jpeg", :class => 'img-polaroid' %></p>
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <% if current_user.vote %>
+      <p style="text-align: center;"><%= @candidatos["Labbe"].votes %></p>
+      <% else %>
       <p style="text-align: center;"><a href="/welcome/vote/<%= @candidatos["Labbe"].id %>" class="btn btn-success">Votar</a></p>
       <% end %>
+    <% end %>
     </div>
     <% else %>
     <p>Candidato "Labbe" no encontrado.</p>
