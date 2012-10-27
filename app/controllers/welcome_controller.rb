@@ -8,7 +8,11 @@ class WelcomeController < ApplicationController
   end
 
   def vote
-    # TODO validate and count vote
+    candidato = Candidato.find_by_id params[:id]
+    if candidato and !current_user.vote
+      candidato.update_attribute('votes', candidato.votes + 1)  # TODO race conditions?
+      current_user.update_attribute('vote', true)
+    end
     redirect_to url_for(:action => 'index')
   end
 end
